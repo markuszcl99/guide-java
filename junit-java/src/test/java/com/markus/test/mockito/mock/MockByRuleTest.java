@@ -1,4 +1,4 @@
-package com.markus.test.mockito;
+package com.markus.test.mockito.mock;
 
 import com.markus.domain.dto.AccountDto;
 import com.markus.service.AccountLoginService;

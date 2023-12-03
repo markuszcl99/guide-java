@@ -1,6 +1,5 @@
-package com.markus.test.mockito;
+package com.markus.test.mockito.mock;
 
-import com.markus.domain.dto.AccountDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;

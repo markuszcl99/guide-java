@@ -1,4 +1,4 @@
-package com.markus.test.mockito;
+package com.markus.test.mockito.mock;
 
 /**
  * @author: markus
