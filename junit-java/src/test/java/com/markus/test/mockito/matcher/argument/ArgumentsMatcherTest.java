@@ -1,4 +1,4 @@
-package com.markus.test.mockito.argumentmatcher;
+package com.markus.test.mockito.matcher.argument;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

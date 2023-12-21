@@ -3,9 +3,11 @@ package com.markus.test.quickstart;
 import com.markus.controller.AccountLoginController;
 import com.markus.domain.dto.AccountDto;
 import com.markus.service.AccountLoginService;
+import com.markus.util.UserUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -13,7 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.*;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /**
