@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>junit-java</module>
+        <module>io-java</module>
     </modules>
 
     <properties>
@@ -18,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit-version>4.13.1</junit-version>
         <mockito-version>1.10.19</mockito-version>
+        <mockito-manual-version>3.7.7</mockito-manual-version>
         <servlet-version>3.1.0</servlet-version>
     </properties>
 
@@ -36,6 +38,25 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
                 <version>${mockito-version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-manual-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito-manual-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito-manual-version}</version>
                 <scope>test</scope>
             </dependency>
 
