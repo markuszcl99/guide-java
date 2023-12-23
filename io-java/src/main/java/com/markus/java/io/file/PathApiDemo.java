@@ -1,4 +1,4 @@
-package com.markus.java.io;
+package com.markus.java.io.file;
 
 import org.apache.commons.io.IOUtils;
 
@@ -51,14 +51,6 @@ public class PathApiDemo {
         System.out.println(Files.exists(pathByUri));
         File file = ap.toFile();
         System.out.println(file.getName());
-    }
-
-    private static String getContent(Reader reader) {
-        try {
-            return IOUtils.toString(reader);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private static void info(Path path) {

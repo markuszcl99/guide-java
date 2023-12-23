@@ -1,4 +1,4 @@
-package com.markus.java.io;
+package com.markus.java.io.file;
 
 import org.apache.commons.io.IOUtils;
 
