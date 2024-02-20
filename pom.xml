@@ -12,6 +12,7 @@
         <module>junit-java</module>
         <module>io-java</module>
         <module>generic-java</module>
+        <module>agent-java</module>
     </modules>
 
     <properties>

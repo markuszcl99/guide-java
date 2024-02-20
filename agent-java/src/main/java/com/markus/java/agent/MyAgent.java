@@ -1,0 +1,1 @@
+package com.markus.java.agent;import java.lang.instrument.Instrumentation;/** * @Author: zhangchenglong06 * @Date: 2024/2/20 * @Description: */public class MyAgent {  public static void premain(String agentArgs, Instrumentation inst) {    System.out.println("MyAgent.premain() was called...");    inst.addTransformer(new MyClassFileTransformer());  }}
