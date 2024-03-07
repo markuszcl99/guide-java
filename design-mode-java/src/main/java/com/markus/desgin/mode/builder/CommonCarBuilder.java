@@ -5,7 +5,7 @@ package com.markus.desgin.mode.builder;
  * @Date: 2024/3/7
  * @Description:
  */
-public class ConcreteCarBuilder extends CarBuilder {
+public class CommonCarBuilder extends CarBuilder {
 
   @Override
   public CarBuilder buildWheel(Wheel wheel) {

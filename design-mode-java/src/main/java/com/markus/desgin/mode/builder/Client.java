@@ -7,7 +7,7 @@ package com.markus.desgin.mode.builder;
  */
 public class Client {
   public static void main(String[] args) {
-    CarBuilder carBuilder = new ConcreteCarBuilder();
+    CarBuilder carBuilder = new CommonCarBuilder();
     Director<Car> director = new XiaoMiDirector(carBuilder);
     Car car = director.construct();
     System.out.println(car);
