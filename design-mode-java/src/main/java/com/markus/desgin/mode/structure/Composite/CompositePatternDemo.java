@@ -6,6 +6,10 @@ package com.markus.desgin.mode.structure.Composite;
  * @Description:
  */
 public class CompositePatternDemo {
+  /**
+   * 组合模式在 Spring 中的应用：org.springframework.aop.support.ComposablePointcut
+   * @param args
+   */
   public static void main(String[] args) {
     Employee employer = new Employee("employer",25,"老板");
     Employee employee = new Employee("markus",25,"员工");
