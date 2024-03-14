@@ -1,4 +1,4 @@
-package com.markus.desgin.mode.structure.Composite;
+package com.markus.desgin.mode.structure.composite;
 
 /**
  * @Author: zhangchenglong06
