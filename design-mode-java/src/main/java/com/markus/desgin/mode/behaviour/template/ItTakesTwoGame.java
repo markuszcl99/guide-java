@@ -1,4 +1,4 @@
-package com.markus.desgin.mode.behaviour;
+package com.markus.desgin.mode.behaviour.template;
 
 /**
  * @Author: zhangchenglong06
