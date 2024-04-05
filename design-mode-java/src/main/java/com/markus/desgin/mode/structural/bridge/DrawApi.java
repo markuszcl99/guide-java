@@ -6,5 +6,5 @@ package com.markus.desgin.mode.structural.bridge;
  * @Description:
  */
 public interface DrawApi {
-  String drawCircle();
+  String draw();
 }

@@ -5,9 +5,9 @@ package com.markus.desgin.mode.structural.bridge;
  * @Date: 2024/3/12
  * @Description:
  */
-public class RedCircleDraw implements DrawApi{
+public class RedDraw implements DrawApi{
   @Override
-  public String drawCircle() {
-    return "红色的圆形";
+  public String draw() {
+    return "使用红色颜料画图";
   }
 }
