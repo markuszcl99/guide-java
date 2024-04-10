@@ -15,6 +15,7 @@
         <module>agent-java</module>
         <module>design-mode-java</module>
         <module>log4j-java</module>
+        <module>basic-java</module>
     </modules>
 
     <properties>
