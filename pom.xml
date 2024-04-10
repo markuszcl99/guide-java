@@ -16,6 +16,7 @@
         <module>design-mode-java</module>
         <module>log4j-java</module>
         <module>basic-java</module>
+        <module>advanced-java</module>
     </modules>
 
     <properties>
