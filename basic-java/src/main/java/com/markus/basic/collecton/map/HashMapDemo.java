@@ -1,4 +1,4 @@
-package com.markus.basic.map;
+package com.markus.basic.collecton.map;
 
 import java.util.HashMap;
 import java.util.Map;
