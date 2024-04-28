@@ -17,6 +17,9 @@
         <module>log4j-java</module>
         <module>basic-java</module>
         <module>advanced-java</module>
+        <module>middleware-java</module>
+        <module>middleware-java/local-cache</module>
+        <module>serialize-java</module>
     </modules>
 
     <properties>
