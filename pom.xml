@@ -14,7 +14,7 @@
         <module>generic-java</module>
         <module>agent-java</module>
         <module>design-mode-java</module>
-        <module>log4j-java</module>
+        <module>log-java</module>
         <module>basic-java</module>
         <module>advanced-java</module>
         <module>middleware-java</module>
