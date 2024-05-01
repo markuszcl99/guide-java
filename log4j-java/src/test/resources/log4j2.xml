@@ -2,7 +2,7 @@
 <configuration status="info">
     <Properties>
         <!-- 声明日志文件存储的目录 -->
-        <Property name="LOG_HOME">/Users/zhangchenglong/workspace/idea_project/guide-java/log4j-java/log
+        <Property name="LOG_HOME">/Users/zhangchenglong/workspace/idea_project/guide-java/log4j-java/log/log4j2
         </Property>
         <Property name="APP_NAME">log</Property>
         <Property name="LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread][%class{36}:%line] - %msg%n"></Property>

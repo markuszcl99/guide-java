@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+    日志输出格式：
+    %-5level
+    %d{yyyy-MM-dd HH:mm:ss.SSS}日期
+    %c类的完整名称
+    %M为method
+    %L为行号
+    %thread线程名称
+    %m或者%msg为信息
+    %n换行
+    -->
+    <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度
+    %msg：日志消息，%n是换行符-->
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level %msg%n"/>
+    <!-- 日志文件存放目录 -->
+    <property name="log_dir" value="/Users/zhangchenglong/workspace/idea_project/guide-java/log4j-java/log/logback"/>
+    <!--
+    Appender: 设置日志信息的去向,常用的有以下几个
+    ch.qos.logback.core.ConsoleAppender (控制台)
+    ch.qos.logback.core.rolling.RollingFileAppender (文件大小到达指定尺寸的时候产生一个新文件)
+    ch.qos.logback.core.FileAppender (文件)
+    -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!--输出流对象 默认 System.out 改为 System.err(也就是输出时候字体变红)-->
+        <target>System.err</target>
+        <!--日志格式配置-->
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!--日志文件输出appender对象-->
+    <!-- 不限制日志大小 -->
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <!--日志格式配置-->
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+        <!--日志输出路径-->
+        <file>${log_dir}/logback.log</file>
+    </appender>
+
+    <!-- 日志文件拆分和归档的appender对象-->
+    <!-- 当一条消息超出限制范围时，也会记录到上一个未满的日志中，待下次再打印日志时，会执行分割-->
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--日志格式配置-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+        <!--日志输出路径-->
+        <file>${log_dir}/roll_logback.error.log</file>
+        <!--指定日志文件拆分和压缩规则-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--通过指定压缩文件名称，来确定分割文件方式-->
+            <fileNamePattern>${log_dir}/rolling.%d{yyyy-MM-dd}.log.error%i.gz</fileNamePattern>
+            <!--文件拆分大小-->
+            <maxFileSize>1MB</maxFileSize>
+        </rollingPolicy>
+
+        <!--日志级别过滤器 filter配置-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--设置拦截日志级别-->
+            <level>error</level>
+            <!--这个级别就放行-->
+            <onMatch>ACCEPT</onMatch>
+            <!--非级别就拦截-->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 日志文件拆分和归档的appender对象-->
+    <!-- 当一条消息超出限制范围时，也会记录到上一个未满的日志中，待下次再打印日志时，会执行分割-->
+    <appender name="warn" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--日志格式配置-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+        <!--日志输出路径-->
+        <file>${log_dir}/roll_logback.warn.log</file>
+        <!--指定日志文件拆分和压缩规则-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--通过指定压缩文件名称，来确定分割文件方式-->
+            <fileNamePattern>${log_dir}/rolling.%d{yyyy-MM-dd}.log.warn%i.gz</fileNamePattern>
+            <!--文件拆分大小-->
+            <maxFileSize>1MB</maxFileSize>
+        </rollingPolicy>
+
+        <!--日志级别过滤器 filter配置-->
+        <!-- 该 Filter 是筛选目标级别异常 符合该等级级别就写入，否则就拦截-->
+        <!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+        <!--            &lt;!&ndash;设置拦截日志级别&ndash;&gt;-->
+        <!--            <level>warn</level>-->
+        <!--            &lt;!&ndash;这个级别就放行&ndash;&gt;-->
+        <!--            <onMatch>ACCEPT</onMatch>-->
+        <!--            &lt;!&ndash;非级别就拦截&ndash;&gt;-->
+        <!--            <onMismatch>DENY</onMismatch>-->
+        <!--        </filter>-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--设置拦截日志级别-->
+            <level>warn</level>
+            <!--大于等于该级别就放行-->
+            <onMatch>ACCEPT</onMatch>
+            <!--小于该级别就拦截-->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!--异步日志-->
+
+    <appender name="asyncFile" class="ch.qos.logback.core.FileAppender">
+        <!--日志格式配置-->
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+        <!--日志输出路径-->
+        <file>${log_dir}/logback.async.log</file>
+    </appender>
+    <appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="asyncFile"/>
+    </appender>
+
+    <!-- 自定义 logger ，其中 additivity 属性表示当前日志不会传递给父 logger，避免重复打印-->
+    <logger name="my_custom_logger" additivity="false" level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+
+
+    <!--
+    <root>也是<logger>元素，但是它是根logger。默认debug
+    level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，
+    <root>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个logger。
+    -->
+    <root level="ALL">
+        <!-- 测试 异步的时候，把这几个同步 appender 注释掉 -->
+        <!--        <appender-ref ref="console"/>-->
+        <!--        <appender-ref ref="file"/>-->
+        <!--        <appender-ref ref="error"/>-->
+        <!--        <appender-ref ref="warn"/>-->
+        <appender-ref ref="async"/>
+    </root>
+</configuration>
