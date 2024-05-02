@@ -1,11 +1,9 @@
-package com.markus.serialize.pb.domain;
+package com.markus.custom.domain;
 
-import io.protostuff.Tag;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -19,15 +17,9 @@ import java.util.List;
 @Builder
 @ToString
 public class User {
-    @Tag(1)
     private Long id;
-    @Tag(2)
     private String username;
-    @Tag(3)
     private String company;
-    @Tag(4)
     private Double salary;
-    @Tag(5)
     private List<Long> poiIds;
-
 }
