@@ -22,7 +22,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version> <!-- 确保使用最新版本 -->
+                <version>3.1.0</version> <!-- 确保使用最新版本 -->
                 <configuration>
                     <archive>
                         <manifest>
