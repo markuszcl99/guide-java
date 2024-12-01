@@ -1,0 +1,12 @@
+
+## 幂运算
+## 基数和指数都为long，并且指数是正数，返回结果是long
+p(2 ** 3);
+## 基数和指数都为 long，并且指数是负数，返回结果是 double
+p(2 ** -3);
+## 基数为 decimal，指数取整数部分（int value），等价于 BigDecimal.pow(int)
+p(2M ** 3);
+## 基数为 bigint，指数取整数部分（int value），等价于 BigInteger.pw(int)
+p(2N ** 3);
+## 基数或者指数任一为 double，结果为 double
+p(2 ** 2.2);
